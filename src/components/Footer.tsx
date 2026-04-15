@@ -5,8 +5,16 @@ export default function Footer() {
         <p className="font-display text-gold text-lg tracking-[0.18em] uppercase mb-2">
           Triple W Rentals
         </p>
-        <p className="text-text-secondary text-sm mb-6">
+        <p className="text-text-secondary text-sm mb-3">
           Tyler, Texas · Nationwide Delivery
+        </p>
+        <p className="mb-6">
+          <a
+            href="tel:+19729656901"
+            className="text-gold hover:text-gold-light transition-colors text-sm tracking-wide font-medium"
+          >
+            (972) 965-6901
+          </a>
         </p>
         <p className="text-text-secondary text-[13px]">
           © 2026 Triple W Rentals. All rights reserved.

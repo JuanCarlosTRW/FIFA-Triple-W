@@ -195,6 +195,15 @@ export default function BookingForm() {
             <br className="hidden sm:inline" />
             No spam. No pressure. Just premium RVs.
           </p>
+          <p className="text-text-secondary text-center text-[13px] mt-3">
+            Prefer to call?{" "}
+            <a
+              href="tel:+19729656901"
+              className="text-gold hover:text-gold-light transition-colors font-medium"
+            >
+              (972) 965-6901
+            </a>
+          </p>
         </BlurFade>
       </div>
     </section>
