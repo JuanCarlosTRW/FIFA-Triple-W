@@ -49,7 +49,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="font-sans text-gold/80 text-[13px] md:text-sm tracking-wide mb-10"
         >
-          ★★★★★ Rated 5.0 across 40+ Google Reviews
+          ★★★★★ 4.7 stars across 200+ Google Reviews
         </motion.p>
 
         <motion.div

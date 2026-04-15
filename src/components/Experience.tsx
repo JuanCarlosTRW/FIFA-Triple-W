@@ -2,18 +2,12 @@
 
 import { BlurFade } from "./ui/BlurFade";
 import { TextReveal } from "./ui/TextReveal";
+import { SoftGlowBackground } from "./ui/SoftGlowBackground";
 
 export default function Experience() {
   return (
     <section className="relative bg-charcoal-warm w-full py-24 md:py-40 overflow-hidden noise-overlay">
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-40"
-        style={{
-          background:
-            "radial-gradient(ellipse at 30% 40%, rgba(212,168,83,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(184,146,47,0.08) 0%, transparent 55%)",
-        }}
-      />
+      <SoftGlowBackground color="#FF7112" opacity={0.28} />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <BlurFade>
           <h2 className="font-display text-cream text-[40px] md:text-6xl leading-[1.1] mb-10">

@@ -87,13 +87,6 @@ export default function MatchSchedule() {
             </div>
           ))}
         </div>
-
-        <BlurFade delay={0.2}>
-          <p className="text-text-secondary text-center text-[15px] max-w-3xl mx-auto mt-14 leading-relaxed">
-            Two Argentina matches. An England–Croatia showdown. A semifinal.
-            Dallas didn&apos;t just get World Cup games — it got the biggest ones.
-          </p>
-        </BlurFade>
       </div>
     </section>
   );

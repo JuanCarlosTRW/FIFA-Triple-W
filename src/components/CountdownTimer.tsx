@@ -79,9 +79,6 @@ export default function CountdownTimer() {
         <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
         <Unit display={formatUnit(parts.seconds)} label="Secs" />
       </div>
-      <p className="text-text-secondary text-xs md:text-sm mt-4 tracking-wide">
-        until Netherlands vs Japan kicks off at Dallas Stadium
-      </p>
     </div>
   );
 }

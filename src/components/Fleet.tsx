@@ -31,9 +31,9 @@ export default function Fleet() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
         <BlurFade>
           <h2 className="font-display text-cream text-4xl md:text-5xl text-center leading-tight mb-6">
-            See What You&apos;re Getting.
+            This Is What Shows Up at Your Door.
             <br className="hidden sm:block" />
-            <span className="text-gradient-gold"> Not What an Algorithm Picked.</span>
+            <span className="text-gradient-gold"> Not a Stock Photo.</span>
           </h2>
         </BlurFade>
         <BlurFade delay={0.15}>
