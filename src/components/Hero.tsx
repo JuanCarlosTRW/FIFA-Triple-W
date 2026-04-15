@@ -2,41 +2,15 @@
 
 import { motion } from "framer-motion";
 import CountdownTimer from "./CountdownTimer";
+import { AnimatedFlagsBackground } from "./ui/AnimatedFlagsBackground";
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center noise-overlay"
+      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center"
     >
-      <div className="absolute inset-0 bg-charcoal" />
-      <div
-        className="absolute -top-1/4 -left-1/4 w-[70vw] h-[70vw] rounded-full opacity-60"
-        style={{
-          background:
-            "radial-gradient(circle at center, rgba(212,168,83,0.18) 0%, rgba(184,146,47,0.08) 35%, transparent 70%)",
-          animation: "orbDrift 24s ease-in-out infinite",
-          filter: "blur(20px)",
-        }}
-      />
-      <div
-        className="absolute -bottom-1/3 -right-1/4 w-[80vw] h-[80vw] rounded-full opacity-50"
-        style={{
-          background:
-            "radial-gradient(circle at center, rgba(212,168,83,0.14) 0%, rgba(26,21,16,0.4) 40%, transparent 72%)",
-          animation: "orbDriftAlt 30s ease-in-out infinite",
-          filter: "blur(28px)",
-        }}
-      />
-      <div
-        className="absolute top-1/3 left-1/2 w-[40vw] h-[40vw] rounded-full opacity-40 -translate-x-1/2"
-        style={{
-          background:
-            "radial-gradient(circle at center, rgba(232,201,122,0.10) 0%, transparent 65%)",
-          animation: "orbDrift 28s ease-in-out infinite reverse",
-          filter: "blur(32px)",
-        }}
-      />
+      <AnimatedFlagsBackground />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 text-center flex flex-col items-center">
         <motion.p
