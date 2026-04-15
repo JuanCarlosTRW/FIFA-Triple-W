@@ -99,14 +99,24 @@ function renderConfirmationHtml(name: string) {
 </body></html>`;
 }
 
+// Sensible defaults so only RESEND_API_KEY needs to be set as a secret.
+// Override via env vars in Vercel if you want to change them without a deploy.
+const DEFAULT_NOTIFY_TO = "jcpl-07@hotmail.com";
+const DEFAULT_FROM = "Triple W Rentals <onboarding@resend.dev>";
+
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY;
-  const notifyTo = process.env.BOOKING_NOTIFY_EMAIL;
-  const from = process.env.RESEND_FROM_EMAIL;
+  const notifyTo = process.env.BOOKING_NOTIFY_EMAIL || DEFAULT_NOTIFY_TO;
+  const from = process.env.RESEND_FROM_EMAIL || DEFAULT_FROM;
 
-  if (!apiKey || !notifyTo || !from) {
+  if (!apiKey) {
+    console.error("[book] RESEND_API_KEY is not set in the environment");
     return NextResponse.json(
-      { ok: false, error: "Email service not configured." },
+      {
+        ok: false,
+        error:
+          "Email service not configured. Please add RESEND_API_KEY to environment variables and redeploy.",
+      },
       { status: 500 }
     );
   }
