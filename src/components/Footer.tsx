@@ -1,3 +1,5 @@
+import { Phone } from "lucide-react";
+
 export default function Footer() {
   return (
     <footer className="bg-charcoal border-t border-white/5 py-12">
@@ -11,8 +13,9 @@ export default function Footer() {
         <p className="mb-6">
           <a
             href="tel:+19729656901"
-            className="text-gold hover:text-gold-light transition-colors text-sm tracking-wide font-medium"
+            className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors text-sm tracking-wide font-medium"
           >
+            <Phone size={14} aria-hidden />
             (972) 965-6901
           </a>
         </p>

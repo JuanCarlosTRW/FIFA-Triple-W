@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Phone } from "lucide-react";
 import { BlurFade } from "./ui/BlurFade";
 import { ShinyButton } from "./ui/ShinyButton";
 
@@ -199,8 +200,9 @@ export default function BookingForm() {
             Prefer to call?{" "}
             <a
               href="tel:+19729656901"
-              className="text-gold hover:text-gold-light transition-colors font-medium"
+              className="inline-flex items-center gap-1.5 align-middle text-gold hover:text-gold-light transition-colors font-medium"
             >
+              <Phone size={13} aria-hidden />
               (972) 965-6901
             </a>
           </p>
