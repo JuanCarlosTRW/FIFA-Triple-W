@@ -7,6 +7,16 @@ import { ShinyButton } from "./ui/ShinyButton";
 
 const GROUP_SIZES = ["1-2", "3-4", "5-6", "7-10", "10+"];
 
+const HEARD_ABOUT_OPTIONS = [
+  "Google Search",
+  "Social Media (Instagram, Facebook, TikTok)",
+  "Friend or Family",
+  "Google Maps or Reviews",
+  "Returning Customer",
+  "News Article or Blog",
+  "Other",
+];
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function BookingForm() {
@@ -117,6 +127,25 @@ export default function BookingForm() {
                     type="text"
                     placeholder="e.g., June 14-22 or Argentina matches"
                   />
+                  <div>
+                    <label className="block text-text-secondary text-[11px] tracking-[0.25em] uppercase mb-2">
+                      How did you hear about us?
+                    </label>
+                    <select
+                      name="heardAbout"
+                      defaultValue=""
+                      className="w-full bg-charcoal border border-white/10 rounded-lg px-4 py-3 text-cream focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition"
+                    >
+                      <option value="" disabled className="text-white/30">
+                        Select an option…
+                      </option>
+                      {HEARD_ABOUT_OPTIONS.map((o) => (
+                        <option key={o} value={o}>
+                          {o}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                   <div>
                     <label className="block text-text-secondary text-[11px] tracking-[0.25em] uppercase mb-2">
                       Message

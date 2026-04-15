@@ -7,6 +7,7 @@ type Payload = {
   phone?: string;
   groupSize?: string;
   matchDates?: string;
+  heardAbout?: string;
   message?: string;
 };
 
@@ -25,6 +26,7 @@ function isValidEmail(e: string) {
 
 function renderNotificationHtml(p: Required<Pick<Payload, "name" | "email" | "phone" | "groupSize">> & {
   matchDates: string;
+  heardAbout: string;
   message: string;
 }) {
   const rows: [string, string][] = [
@@ -33,6 +35,7 @@ function renderNotificationHtml(p: Required<Pick<Payload, "name" | "email" | "ph
     ["Phone", p.phone],
     ["Group size", p.groupSize],
     ["Match dates", p.matchDates || "—"],
+    ["Heard about us", p.heardAbout || "—"],
     ["Message", p.message || "—"],
   ];
   const body = rows
@@ -120,6 +123,7 @@ export async function POST(req: Request) {
   const phone = (body.phone || "").trim().slice(0, 40);
   const groupSize = (body.groupSize || "").trim().slice(0, 20);
   const matchDates = (body.matchDates || "").trim().slice(0, 400);
+  const heardAbout = (body.heardAbout || "").trim().slice(0, 120);
   const message = (body.message || "").trim().slice(0, 2000);
 
   if (!name || !email || !phone || !groupSize) {
@@ -140,6 +144,7 @@ export async function POST(req: Request) {
     phone,
     groupSize,
     matchDates,
+    heardAbout,
     message,
   });
   const confirmationHtml = renderConfirmationHtml(name);
