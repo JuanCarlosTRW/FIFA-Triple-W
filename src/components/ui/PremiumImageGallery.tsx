@@ -2,23 +2,36 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
-import { ChevronLeft, ChevronRight, X, ZoomIn, Maximize2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, Maximize2, Play } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
+export type GalleryItem =
+  | { type: "image"; src: string }
+  | { type: "video"; src: string; poster?: string };
+
 type Props = {
-  images: string[];
+  items?: GalleryItem[];
+  /** @deprecated Pass `items` instead. Kept for legacy callers. */
+  images?: string[];
   autoPlayInterval?: number;
   showThumbnails?: boolean;
   enableFullscreen?: boolean;
 };
 
+function toItems(props: Pick<Props, "items" | "images">): GalleryItem[] {
+  if (props.items?.length) return props.items;
+  return (props.images ?? []).map((src) => ({ type: "image" as const, src }));
+}
+
 export default function PremiumImageGallery({
+  items,
   images,
   autoPlayInterval = 5000,
   showThumbnails = true,
   enableFullscreen = true,
 }: Props) {
+  const media = toItems({ items, images });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [direction, setDirection] = useState(0);
@@ -41,26 +54,30 @@ export default function PremiumImageGallery({
 
   const goNext = useCallback(() => {
     setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+    setCurrentIndex((prev) => (prev + 1) % media.length);
     pauseAutoPlay();
-  }, [images.length, pauseAutoPlay]);
+  }, [media.length, pauseAutoPlay]);
 
   const goPrev = useCallback(() => {
     setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
     pauseAutoPlay();
-  }, [images.length, pauseAutoPlay]);
+  }, [media.length, pauseAutoPlay]);
+
+  const currentItem = media[currentIndex];
+  const isVideoSlide = currentItem?.type === "video";
 
   useEffect(() => {
-    if (!isAutoPlaying || isFullscreen) return;
+    // Pause autoplay while a video slide is on screen so it can play without interruption.
+    if (!isAutoPlaying || isFullscreen || isVideoSlide) return;
     autoPlayRef.current = setInterval(() => {
       setDirection(1);
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => (prev + 1) % media.length);
     }, autoPlayInterval);
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
-  }, [isAutoPlaying, images.length, autoPlayInterval, isFullscreen]);
+  }, [isAutoPlaying, media.length, autoPlayInterval, isFullscreen, isVideoSlide]);
 
   const handleDragEnd = (
     _event: MouseEvent | TouchEvent | PointerEvent,
@@ -112,20 +129,34 @@ export default function PremiumImageGallery({
                 onDragEnd={handleDragEnd}
                 className="absolute inset-0 cursor-grab active:cursor-grabbing"
               >
-                <Image
-                  src={images[currentIndex]}
-                  alt={`Triple W RV unit ${currentIndex + 1}`}
-                  fill
-                  priority={currentIndex === 0}
-                  sizes="(min-width: 1024px) 80vw, 100vw"
-                  className="object-cover select-none pointer-events-none"
-                  draggable={false}
-                />
+                {currentItem?.type === "video" ? (
+                  <video
+                    key={currentItem.src}
+                    src={currentItem.src}
+                    poster={currentItem.poster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+                  />
+                ) : (
+                  <Image
+                    src={currentItem!.src}
+                    alt={`Triple W RV unit ${currentIndex + 1}`}
+                    fill
+                    priority={currentIndex === 0}
+                    sizes="(min-width: 1024px) 80vw, 100vw"
+                    className="object-cover select-none pointer-events-none"
+                    draggable={false}
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
               </motion.div>
             </AnimatePresence>
 
-            {enableFullscreen && (
+            {enableFullscreen && !isVideoSlide && (
               <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
                 <motion.button
                   whileHover={{ scale: 1.08 }}
@@ -161,7 +192,7 @@ export default function PremiumImageGallery({
             </div>
 
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-              {images.map((_, index) => (
+              {media.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
@@ -183,7 +214,7 @@ export default function PremiumImageGallery({
           {showThumbnails && (
             <div className="p-4 md:p-5 bg-charcoal-warm/80 border-t border-gold/10">
               <div className="flex gap-2 md:gap-3 overflow-x-auto pb-1">
-                {images.map((image, index) => (
+                {media.map((item, index) => (
                   <motion.button
                     key={index}
                     onClick={() => goToSlide(index)}
@@ -195,13 +226,38 @@ export default function PremiumImageGallery({
                     whileHover={{ scale: 1.04, y: -2 }}
                     whileTap={{ scale: 0.96 }}
                   >
-                    <Image
-                      src={image}
-                      alt={`Thumbnail ${index + 1}`}
-                      fill
-                      sizes="80px"
-                      className="object-cover"
-                    />
+                    {item.type === "video" ? (
+                      <>
+                        {item.poster ? (
+                          <Image
+                            src={item.poster}
+                            alt={`Thumbnail ${index + 1}`}
+                            fill
+                            sizes="80px"
+                            className="object-cover"
+                          />
+                        ) : (
+                          <video
+                            src={item.src}
+                            muted
+                            playsInline
+                            preload="metadata"
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                        )}
+                        <div className="absolute inset-0 flex items-center justify-center bg-charcoal/40">
+                          <Play size={14} className="text-gold drop-shadow" fill="currentColor" />
+                        </div>
+                      </>
+                    ) : (
+                      <Image
+                        src={item.src}
+                        alt={`Thumbnail ${index + 1}`}
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                      />
+                    )}
                   </motion.button>
                 ))}
               </div>
@@ -210,7 +266,7 @@ export default function PremiumImageGallery({
         </div>
 
         <p className="text-center mt-5 text-xs md:text-sm text-text-secondary tabular-nums">
-          {currentIndex + 1} / {images.length}
+          {currentIndex + 1} / {media.length}
         </p>
       </div>
 
@@ -233,18 +289,20 @@ export default function PremiumImageGallery({
               >
                 <X size={24} />
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsZoomed(!isZoomed);
-                }}
-                className="absolute top-4 right-20 p-3 rounded-full bg-charcoal/80 hover:bg-charcoal text-gold z-10"
-                aria-label="Zoom"
-              >
-                <ZoomIn size={24} />
-              </motion.button>
+              {!isVideoSlide && (
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsZoomed(!isZoomed);
+                  }}
+                  className="absolute top-4 right-20 p-3 rounded-full bg-charcoal/80 hover:bg-charcoal text-gold z-10"
+                  aria-label="Zoom"
+                >
+                  <ZoomIn size={24} />
+                </motion.button>
+              )}
 
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 z-10">
                 <Button
@@ -273,23 +331,41 @@ export default function PremiumImageGallery({
 
               <motion.div
                 className={`relative max-w-[92vw] max-h-[85vh] w-full h-full ${
-                  isZoomed ? "cursor-zoom-out" : "cursor-zoom-in"
+                  isVideoSlide
+                    ? ""
+                    : isZoomed
+                    ? "cursor-zoom-out"
+                    : "cursor-zoom-in"
                 }`}
-                animate={{ scale: isZoomed ? 1.5 : 1 }}
+                animate={{ scale: !isVideoSlide && isZoomed ? 1.5 : 1 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setIsZoomed(!isZoomed);
+                  if (!isVideoSlide) setIsZoomed(!isZoomed);
                 }}
               >
-                <Image
-                  src={images[currentIndex]}
-                  alt={`Fullscreen RV unit ${currentIndex + 1}`}
-                  fill
-                  sizes="90vw"
-                  className="object-contain select-none"
-                  draggable={false}
-                />
+                {isVideoSlide ? (
+                  <video
+                    key={currentItem.src}
+                    src={currentItem.src}
+                    poster={currentItem.type === "video" ? currentItem.poster : undefined}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    className="absolute inset-0 w-full h-full object-contain"
+                  />
+                ) : (
+                  <Image
+                    src={currentItem!.src}
+                    alt={`Fullscreen RV unit ${currentIndex + 1}`}
+                    fill
+                    sizes="90vw"
+                    className="object-contain select-none"
+                    draggable={false}
+                  />
+                )}
               </motion.div>
             </div>
           </motion.div>

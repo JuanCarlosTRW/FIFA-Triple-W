@@ -1,20 +1,25 @@
 "use client";
 
 import { BlurFade } from "./ui/BlurFade";
-import PremiumImageGallery from "./ui/PremiumImageGallery";
+import PremiumImageGallery, { type GalleryItem } from "./ui/PremiumImageGallery";
 
-/* TODO: Add video showcase — https://video.wixstatic.com/video/62f926_8ff76b0555c04f32acb69a68ef4633af/480p/mp4/file.mp4 */
-const RV_IMAGES = [
-  "https://static.wixstatic.com/media/62f926_c393c781146e46d6938c11efb3f377d6~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_72984415dae543f5a93113defc3976a4~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_6081972934c541bf9b8aaa703b74f585~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_69694ee7940c4fe4985b984e4067343e~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_26b6714d0a0d4937b73e45668ce44bd9~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_d5db0126f18a4cc0884f4308913f9362~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_e4c918f468b243d89371fa40f6424fce~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_b833defbf81b455991760bc1f4c878ff~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_1ba23ff81e904ae2b5feae14ed4754fb~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_cf6fafa3b7184f93b149c98ee96c783f~mv2.webp",
+const RV_MEDIA: GalleryItem[] = [
+  {
+    type: "video",
+    src: "https://video.wixstatic.com/video/62f926_8ff76b0555c04f32acb69a68ef4633af/480p/mp4/file.mp4",
+    poster:
+      "https://static.wixstatic.com/media/62f926_c393c781146e46d6938c11efb3f377d6~mv2.webp",
+  },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_c393c781146e46d6938c11efb3f377d6~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_72984415dae543f5a93113defc3976a4~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_6081972934c541bf9b8aaa703b74f585~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_69694ee7940c4fe4985b984e4067343e~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_26b6714d0a0d4937b73e45668ce44bd9~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_d5db0126f18a4cc0884f4308913f9362~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_e4c918f468b243d89371fa40f6424fce~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_b833defbf81b455991760bc1f4c878ff~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_1ba23ff81e904ae2b5feae14ed4754fb~mv2.webp" },
+  { type: "image", src: "https://static.wixstatic.com/media/62f926_cf6fafa3b7184f93b149c98ee96c783f~mv2.webp" },
 ];
 
 export default function Fleet() {
@@ -45,7 +50,7 @@ export default function Fleet() {
         </BlurFade>
 
         <BlurFade delay={0.25}>
-          <PremiumImageGallery images={RV_IMAGES} />
+          <PremiumImageGallery items={RV_MEDIA} />
         </BlurFade>
 
         <BlurFade delay={0.45}>

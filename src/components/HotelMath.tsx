@@ -93,7 +93,7 @@ export default function HotelMath() {
               <br />
               Stay on Your Terms.
             </h2>
-            <ul className="flex flex-col gap-4 mb-10">
+            <ul className="flex flex-col gap-4 mb-8">
               {BENEFITS.map((b) => (
                 <li key={b} className="flex items-start gap-3 text-cream text-base md:text-[17px]">
                   <span className="text-gold text-xl leading-tight mt-[2px]">✦</span>
@@ -101,6 +101,16 @@ export default function HotelMath() {
                 </li>
               ))}
             </ul>
+            <div className="mb-10 rounded-lg border border-gold/20 bg-gold/[0.04] px-5 py-4">
+              <p className="text-gold text-[10px] tracking-[0.3em] uppercase mb-1.5">
+                Optional Add-On
+              </p>
+              <p className="text-cream text-[15px] md:text-base leading-snug">
+                <span className="font-semibold">Starlink Wi-Fi</span> — high-speed satellite
+                internet available for your unit. Stream matches, work remotely, stay
+                connected anywhere we deliver.
+              </p>
+            </div>
             <a
               href="#booking"
               className="inline-flex items-center gap-2 border border-gold/60 text-gold hover:bg-gold hover:text-charcoal transition-all duration-300 px-6 py-3 rounded-md text-sm font-medium tracking-wide uppercase"
