@@ -33,6 +33,7 @@ interface FlagItemProps {
   delay: number;
   layer: number;
   index: number;
+  isMobile: boolean;
 }
 
 const FlagItem = ({
@@ -42,14 +43,20 @@ const FlagItem = ({
   delay,
   layer,
   index,
+  isMobile,
 }: FlagItemProps) => {
-  const sizes: Record<number, { width: number; height: number; blur: number; opacity: number }> = {
+  const desktopSizes: Record<number, { width: number; height: number; blur: number; opacity: number }> = {
     0: { width: 80, height: 60, blur: 2, opacity: 0.35 },
     1: { width: 100, height: 75, blur: 0, opacity: 0.5 },
     2: { width: 120, height: 90, blur: 0, opacity: 0.7 },
   };
+  const mobileSizes: Record<number, { width: number; height: number; blur: number; opacity: number }> = {
+    0: { width: 36, height: 27, blur: 2, opacity: 0.22 },
+    1: { width: 44, height: 33, blur: 0, opacity: 0.35 },
+    2: { width: 54, height: 40, blur: 0, opacity: 0.45 },
+  };
 
-  const { width, height, blur, opacity } = sizes[layer];
+  const { width, height, blur, opacity } = (isMobile ? mobileSizes : desktopSizes)[layer];
 
   const floatDuration = 8 + (index % 4);
   const rotateDuration = 12 + (index % 5);
@@ -116,7 +123,7 @@ const FlagItem = ({
   );
 };
 
-const positions = [
+const desktopPositions = [
   { x: 5, y: 8 },
   { x: 12, y: 15 },
   { x: 8, y: 22 },
@@ -135,15 +142,32 @@ const positions = [
   { x: 85, y: 55 },
 ];
 
+// Mobile: 4 flags, one per corner — clear of eyebrow/headline/countdown/CTA/trust-line bands
+const mobilePositions = [
+  { x: 2, y: 1 },
+  { x: 86, y: 1 },
+  { x: 2, y: 95 },
+  { x: 86, y: 95 },
+];
+
 export function AnimatedFlagsBackground() {
   const [activeGroupIndex, setActiveGroupIndex] = useState(0);
   const [visibleFlags, setVisibleFlags] = useState<Flag[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
 
   const parallaxX = useTransform(mouseX, [0, 1], [-20, 20]);
   const parallaxY = useTransform(mouseY, [0, 1], [-20, 20]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -157,7 +181,9 @@ export function AnimatedFlagsBackground() {
   useEffect(() => {
     const currentGroup = flagGroups[activeGroupIndex];
     const nextGroup = flagGroups[(activeGroupIndex + 1) % flagGroups.length];
-    const selected = [...currentGroup.countries, ...nextGroup.countries.slice(0, 2)];
+    const fullSelection = [...currentGroup.countries, ...nextGroup.countries.slice(0, 2)];
+    const positions = isMobile ? mobilePositions : desktopPositions;
+    const selected = isMobile ? fullSelection.slice(0, 4) : fullSelection;
 
     const flags: Flag[] = selected.map((country, index) => ({
       ...country,
@@ -173,7 +199,7 @@ export function AnimatedFlagsBackground() {
     }, 12000);
 
     return () => clearInterval(interval);
-  }, [activeGroupIndex]);
+  }, [activeGroupIndex, isMobile]);
 
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -209,6 +235,7 @@ export function AnimatedFlagsBackground() {
             delay={idx * 0.1}
             layer={flag.layer}
             index={flag.index}
+            isMobile={isMobile}
           />
         ))}
       </motion.div>

@@ -25,20 +25,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
         <a
           href="#top"
-          className="font-display text-gold text-lg md:text-xl tracking-[0.18em] uppercase"
+          className="font-display text-gold text-base sm:text-lg md:text-xl tracking-[0.14em] sm:tracking-[0.18em] uppercase whitespace-nowrap"
         >
           Triple W Rentals
         </a>
         <a
           href="#booking"
           className={cn(
-            "px-4 py-2 md:px-5 md:py-2.5 rounded-md text-xs md:text-sm font-medium tracking-wide uppercase transition-all duration-300",
+            "whitespace-nowrap rounded-md font-medium tracking-wide uppercase transition-all duration-300",
+            "px-3 py-2 text-[10px] sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm",
             scrolled
               ? "bg-gold text-charcoal hover:bg-gold-light shadow-[0_0_20px_rgba(212,168,83,0.25)]"
               : "border border-gold/60 text-gold hover:bg-gold hover:text-charcoal"
           )}
         >
-          Reserve Your Dates
+          <span className="sm:hidden">Reserve</span>
+          <span className="hidden sm:inline">Reserve Your Dates</span>
         </a>
       </div>
     </header>
