@@ -7,18 +7,42 @@ import { ShinyButton } from "./ui/ShinyButton";
 
 const GROUP_SIZES = ["1-2", "3-4", "5-6", "7-10", "10+"];
 
-type Status = "idle" | "submitting" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
 
 export default function BookingForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
     setStatus("submitting");
-    // TODO: Connect to Resend API
-    console.log("[BookingForm submit]", data);
-    setTimeout(() => setStatus("success"), 500);
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const payload = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+      if (!res.ok || !payload.ok) {
+        setErrorMsg(
+          payload.error ||
+            "Something went wrong. Please try again, or email jcpl-07@hotmail.com directly."
+        );
+        setStatus("error");
+        return;
+      }
+      setStatus("success");
+    } catch {
+      setErrorMsg(
+        "Network error. Please check your connection and try again."
+      );
+      setStatus("error");
+    }
   }
 
   return (
@@ -104,6 +128,15 @@ export default function BookingForm() {
                       className="w-full bg-charcoal border border-white/10 rounded-lg px-4 py-3 text-cream placeholder:text-white/30 focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition resize-none"
                     />
                   </div>
+
+                  {status === "error" && errorMsg && (
+                    <div
+                      role="alert"
+                      className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200"
+                    >
+                      {errorMsg}
+                    </div>
+                  )}
 
                   <ShinyButton
                     type="submit"
