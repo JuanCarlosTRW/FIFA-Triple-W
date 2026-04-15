@@ -10,13 +10,11 @@ const RV_IMAGES = [
   "https://static.wixstatic.com/media/62f926_6081972934c541bf9b8aaa703b74f585~mv2.webp",
   "https://static.wixstatic.com/media/62f926_69694ee7940c4fe4985b984e4067343e~mv2.webp",
   "https://static.wixstatic.com/media/62f926_26b6714d0a0d4937b73e45668ce44bd9~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_8ddfdcc1378846e19308f5decd42954b~mv2.webp",
   "https://static.wixstatic.com/media/62f926_d5db0126f18a4cc0884f4308913f9362~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_a4cf7b87738c4ed89d251b691e9f8426~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_971fa237736944e984593279e2b0d70f~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_2859c9d4dc1b4dd8a20e29dce61ea6d3~mv2.webp",
-  "https://static.wixstatic.com/media/62f926_2d4fd6e6357345238f12874fbb60275a~mv2.webp",
   "https://static.wixstatic.com/media/62f926_e4c918f468b243d89371fa40f6424fce~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_b833defbf81b455991760bc1f4c878ff~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_1ba23ff81e904ae2b5feae14ed4754fb~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_cf6fafa3b7184f93b149c98ee96c783f~mv2.webp",
 ];
 
 export default function Fleet() {
