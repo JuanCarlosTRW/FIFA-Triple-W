@@ -6,7 +6,6 @@ import { TextReveal } from "./ui/TextReveal";
 export default function Experience() {
   return (
     <section className="relative bg-charcoal-warm w-full py-24 md:py-40 overflow-hidden noise-overlay">
-      {/* TODO: Full-bleed atmospheric RV setup image — dusk, string lights, chairs, grill */}
       <div
         aria-hidden
         className="absolute inset-0 opacity-40"
@@ -24,13 +23,16 @@ export default function Experience() {
         <BlurFade delay={0.2}>
           <div className="text-text-secondary text-[17px] md:text-[19px] leading-[1.7] max-w-2xl mx-auto space-y-5">
             <p>
-              Tailgate before the match. Come back to AC and a real bed after.
-              Cook breakfast for the group instead of waiting 45 minutes at a
-              hotel restaurant. Watch the recap on your own couch. Step outside
-              to the atmosphere of a World Cup city that&apos;s alive with energy.
+              Wake up on match day in your own space. Make coffee. No lobby. No checkout.
             </p>
-            <p className="text-cream/90">
-              This isn&apos;t just accommodation. It&apos;s your World Cup basecamp.
+            <p>
+              Tailgate with your group before kickoff. Come back after the final whistle
+              to AC, a real kitchen, and actual beds — not a cramped hotel room split
+              four ways.
+            </p>
+            <p className="text-cream/90 font-medium">
+              This is what the smart fans figure out: the RV isn&apos;t the backup plan.
+              It&apos;s the better plan.
             </p>
           </div>
         </BlurFade>

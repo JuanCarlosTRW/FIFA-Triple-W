@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import "@fontsource/cormorant-garamond/400.css";
-import "@fontsource/cormorant-garamond/500.css";
-import "@fontsource/cormorant-garamond/600.css";
-import "@fontsource/cormorant-garamond/700.css";
+import "@fontsource/playfair-display/400.css";
+import "@fontsource/playfair-display/500.css";
+import "@fontsource/playfair-display/600.css";
+import "@fontsource/playfair-display/700.css";
+import "@fontsource/playfair-display/400-italic.css";
+import "@fontsource/playfair-display/600-italic.css";
 import "@fontsource/outfit/300.css";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/500.css";
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   keywords:
     "RV rental World Cup Dallas, FIFA 2026 accommodation, AT&T Stadium lodging, Dallas World Cup RV, RV rental Arlington TX",
   openGraph: {
-    title: "Your World Cup Headquarters. Delivered. | Triple W Rentals",
+    title: "Your World Cup Home Base. Delivered. | Triple W Rentals",
     description:
       "Premium RVs delivered and set up for FIFA World Cup 2026 in Dallas. Skip $1,000/night hotels. Limited fleet — reserve your dates now.",
     type: "website",

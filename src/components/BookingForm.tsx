@@ -26,18 +26,18 @@ export default function BookingForm() {
       <div className="max-w-3xl mx-auto px-6">
         <BlurFade>
           <h2 className="font-display text-cream text-4xl md:text-5xl text-center leading-tight mb-5">
-            Limited Fleet. 3.8 Million Fans. Don&apos;t Wait.
+            20 RVs. 3.8 Million Visitors. You Do the Math.
           </h2>
         </BlurFade>
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
-            20 premium RVs for the biggest sporting event in US history.
-            Fill out the form and Westin will personally confirm your reservation within 24 hours.
+            Fill out the form below. Westin will personally reach out within 24 hours
+            to lock in your unit and dates.
           </p>
         </BlurFade>
 
         <BlurFade delay={0.25}>
-          <div className="bg-charcoal/80 border border-gold/15 rounded-2xl p-8 md:p-10 backdrop-blur-sm animate-pulse-gold">
+          <div className="bg-charcoal/80 border border-gold/15 rounded-2xl p-8 md:p-10 backdrop-blur-sm animate-pulse-gold shadow-[0_0_30px_rgba(212,168,83,0.08)]">
             <AnimatePresence mode="wait">
               {status === "success" ? (
                 <motion.div

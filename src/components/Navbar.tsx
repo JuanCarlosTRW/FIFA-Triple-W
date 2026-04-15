@@ -31,7 +31,12 @@ export default function Navbar() {
         </a>
         <a
           href="#booking"
-          className="border border-gold/60 text-gold hover:bg-gold hover:text-charcoal transition-all duration-300 px-4 py-2 md:px-5 md:py-2.5 rounded-md text-xs md:text-sm font-medium tracking-wide uppercase"
+          className={cn(
+            "px-4 py-2 md:px-5 md:py-2.5 rounded-md text-xs md:text-sm font-medium tracking-wide uppercase transition-all duration-300",
+            scrolled
+              ? "bg-gold text-charcoal hover:bg-gold-light shadow-[0_0_20px_rgba(212,168,83,0.25)]"
+              : "border border-gold/60 text-gold hover:bg-gold hover:text-charcoal"
+          )}
         >
           Reserve Your Dates
         </a>

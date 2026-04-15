@@ -9,7 +9,6 @@ export default function Hero() {
       id="top"
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center noise-overlay"
     >
-      {/* Animated gradient orbs */}
       <div className="absolute inset-0 bg-charcoal" />
       <div
         className="absolute -top-1/4 -left-1/4 w-[70vw] h-[70vw] rounded-full opacity-60"
@@ -46,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-gold text-[11px] md:text-xs tracking-[0.35em] uppercase mb-8"
         >
-          Triple W Rentals · FIFA World Cup 2026
+          Triple W Rentals · Dallas · FIFA World Cup 2026
         </motion.p>
 
         <motion.h1
@@ -55,9 +54,9 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-cream text-[44px] leading-[1.05] sm:text-6xl md:text-7xl max-w-4xl mb-8"
         >
-          Your World Cup Headquarters.
+          Your World Cup Home Base.
           <br />
-          <span className="text-gradient-gold">Delivered to Dallas.</span>
+          <span className="text-gradient-gold">Delivered.</span>
         </motion.h1>
 
         <motion.p
@@ -66,8 +65,8 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-text-secondary text-base md:text-xl max-w-2xl mb-12 leading-relaxed"
         >
-          Skip the $1,000/night hotels. Get a premium RV delivered, set up,
-          and ready before your first match at Dallas Stadium.
+          Hotels near Dallas Stadium are $1,000+ a night — if you can even find one.
+          We deliver a premium RV to your door, fully set up, before your first kickoff.
         </motion.p>
 
         <motion.div
@@ -95,7 +94,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-6 text-text-secondary text-xs md:text-sm tracking-wide"
         >
-          20 Premium RVs · Nationwide Delivery · Limited Availability
+          20 Premium Units · Delivered Anywhere in the US · Book Before They&apos;re Gone
         </motion.p>
       </div>
     </section>

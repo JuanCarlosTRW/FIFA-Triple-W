@@ -38,7 +38,6 @@ export default function HotelMath() {
   return (
     <section className="relative w-full">
       <div className="grid md:grid-cols-2">
-        {/* Problem */}
         <BlurFade
           as="div"
           delay={0.1}
@@ -47,9 +46,9 @@ export default function HotelMath() {
           <div className="max-w-xl md:ml-auto">
             <p className="text-gold text-[11px] tracking-[0.35em] uppercase mb-6">The Reality</p>
             <h2 className="font-display text-cream text-4xl md:text-5xl leading-tight mb-10">
-              Hotel Math Doesn&apos;t Work
+              Do the Hotel Math.
               <br />
-              for the World Cup.
+              It Doesn&apos;t Add Up.
             </h2>
             <div className="flex flex-col gap-5">
               <Stat value={1000} prefix="$" suffix="+" label="per night near AT&T Stadium" />
@@ -75,12 +74,11 @@ export default function HotelMath() {
               />
             </div>
             <p className="text-text-secondary text-sm mt-8 italic">
-              If you can even find availability.
+              And that&apos;s if you can even find a room.
             </p>
           </div>
         </BlurFade>
 
-        {/* Solution */}
         <BlurFade
           as="div"
           delay={0.3}
@@ -91,9 +89,9 @@ export default function HotelMath() {
               The Smarter Play
             </p>
             <h2 className="font-display text-cream text-4xl md:text-5xl leading-tight mb-10">
-              A Premium RV.
+              A Better Way to Stay.
               <br />
-              A Fraction of the Cost.
+              A Fraction of the Price.
             </h2>
             <ul className="flex flex-col gap-4 mb-10">
               {BENEFITS.map((b) => (

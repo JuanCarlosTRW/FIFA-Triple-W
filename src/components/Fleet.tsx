@@ -1,79 +1,54 @@
 "use client";
 
-import Image from "next/image";
 import { BlurFade } from "./ui/BlurFade";
+import PremiumImageGallery from "./ui/PremiumImageGallery";
 
-type Unit = {
-  name: string;
-  specs: string;
-  image: string;
-};
-
-/* TODO: Replace with unique RV photos */
-const RV_IMAGE =
-  "https://static.wixstatic.com/media/62f926_5c14016a71f74c77a7eedfa86309eadd~mv2.jpg";
-
-const FLEET: Unit[] = [
-  {
-    name: "The Family Flagship",
-    specs: "Sleeps 8 · Full Kitchen · Full Bath · AC",
-    image: RV_IMAGE,
-  },
-  {
-    name: "The Group Suite",
-    specs: "Sleeps 10 · Full Kitchen · Full Bath · AC",
-    image: RV_IMAGE,
-  },
-  {
-    name: "The Couples Retreat",
-    specs: "Sleeps 6 · Full Kitchen · Full Bath · AC",
-    image: RV_IMAGE,
-  },
+/* TODO: Add video showcase — https://video.wixstatic.com/video/62f926_8ff76b0555c04f32acb69a68ef4633af/480p/mp4/file.mp4 */
+const RV_IMAGES = [
+  "https://static.wixstatic.com/media/62f926_c393c781146e46d6938c11efb3f377d6~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_72984415dae543f5a93113defc3976a4~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_6081972934c541bf9b8aaa703b74f585~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_69694ee7940c4fe4985b984e4067343e~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_26b6714d0a0d4937b73e45668ce44bd9~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_8ddfdcc1378846e19308f5decd42954b~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_d5db0126f18a4cc0884f4308913f9362~mv2.webp",
 ];
 
 export default function Fleet() {
   return (
-    <section id="fleet" className="bg-cream w-full py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="fleet" className="bg-charcoal w-full py-20 md:py-32 relative overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-30 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 0%, rgba(212,168,83,0.08) 0%, transparent 60%)",
+        }}
+      />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
         <BlurFade>
-          <h2 className="font-display text-charcoal text-4xl md:text-5xl text-center leading-tight mb-6">
-            Premium RVs. Not Rental-Platform Gambles.
+          <h2 className="font-display text-cream text-4xl md:text-5xl text-center leading-tight mb-6">
+            See What You&apos;re Getting.
+            <br className="hidden sm:block" />
+            <span className="text-gradient-gold"> Not What an Algorithm Picked.</span>
           </h2>
         </BlurFade>
         <BlurFade delay={0.15}>
-          <p className="text-charcoal/60 text-center text-base md:text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
-            Every unit in our fleet is personally maintained, deep-cleaned, and
-            inspected by Westin before delivery. What you see is what you get.
+          <p className="text-text-secondary text-center text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
+            Every RV is hand-selected, deep-cleaned, and personally inspected by Westin
+            before it leaves our lot. No surprises. No gambles.
           </p>
         </BlurFade>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {FLEET.map((unit, i) => (
-            <BlurFade key={unit.name} delay={0.2 + i * 0.1}>
-              <article className="group">
-                <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-charcoal-warm mb-5">
-                  <Image
-                    src={unit.image}
-                    alt={unit.name}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                </div>
-                <h3 className="font-display text-charcoal text-xl md:text-[22px] mb-1">
-                  {unit.name}
-                </h3>
-                <p className="text-charcoal/50 text-sm tracking-wide">{unit.specs}</p>
-              </article>
-            </BlurFade>
-          ))}
-        </div>
+        <BlurFade delay={0.25}>
+          <PremiumImageGallery images={RV_IMAGES} />
+        </BlurFade>
 
-        <BlurFade delay={0.5}>
-          <div className="text-center mt-16">
+        <BlurFade delay={0.45}>
+          <div className="text-center mt-14">
             <a
               href="#booking"
-              className="inline-flex items-center gap-2 bg-charcoal hover:bg-charcoal-warm text-gold font-semibold text-base px-10 py-4 rounded-lg transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-charcoal font-semibold text-base px-10 py-4 rounded-lg transition-all duration-300 shadow-[0_0_30px_rgba(212,168,83,0.2)]"
             >
               Reserve Your Unit <span aria-hidden>→</span>
             </a>

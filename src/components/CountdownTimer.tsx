@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const TARGET = new Date("2026-06-14T15:00:00-05:00").getTime();
+// June 14, 2026 3:00 PM CDT (UTC-5)
+const TARGET = new Date("2026-06-14T20:00:00Z").getTime();
 
 type Parts = { days: number; hours: number; minutes: number; seconds: number };
 
@@ -16,14 +17,16 @@ function diff(now: number): Parts {
   return { days, hours, minutes, seconds };
 }
 
-function pad(n: number, width = 2) {
-  return String(n).padStart(width, "0");
-}
+const formatDays = (n: number) => String(n);
+const formatUnit = (n: number) => String(n).padStart(2, "0");
 
-function Unit({ value, label, width = 2 }: { value: number; label: string; width?: number }) {
-  const display = pad(value, width);
+function Unit({ display, label, wide }: { display: string; label: string; wide?: boolean }) {
   return (
-    <div className="flex flex-col items-center min-w-[70px] md:min-w-[90px] bg-charcoal-warm/60 border border-gold/20 backdrop-blur-sm rounded-lg px-3 py-4 md:px-5 md:py-5">
+    <div
+      className={`flex flex-col items-center bg-charcoal-warm/60 border border-gold/20 backdrop-blur-sm rounded-lg px-3 py-4 md:py-5 ${
+        wide ? "min-w-[84px] md:min-w-[110px] px-4 md:px-6" : "min-w-[70px] md:min-w-[90px] md:px-5"
+      }`}
+    >
       <div className="relative h-12 md:h-16 w-full flex items-center justify-center overflow-hidden">
         <AnimatePresence mode="popLayout">
           <motion.span
@@ -66,14 +69,19 @@ export default function CountdownTimer() {
   }
 
   return (
-    <div className="flex items-center gap-2 md:gap-4">
-      <Unit value={parts.days} label="Days" width={3} />
-      <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
-      <Unit value={parts.hours} label="Hours" />
-      <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
-      <Unit value={parts.minutes} label="Mins" />
-      <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
-      <Unit value={parts.seconds} label="Secs" />
+    <div className="flex flex-col items-center">
+      <div className="flex items-center gap-2 md:gap-4">
+        <Unit display={formatDays(parts.days)} label="Days" wide />
+        <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
+        <Unit display={formatUnit(parts.hours)} label="Hours" />
+        <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
+        <Unit display={formatUnit(parts.minutes)} label="Mins" />
+        <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
+        <Unit display={formatUnit(parts.seconds)} label="Secs" />
+      </div>
+      <p className="text-text-secondary text-xs md:text-sm mt-4 tracking-wide">
+        until Netherlands vs Japan kicks off at Dallas Stadium
+      </p>
     </div>
   );
 }
