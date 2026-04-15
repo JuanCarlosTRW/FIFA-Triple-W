@@ -12,6 +12,11 @@ const RV_IMAGES = [
   "https://static.wixstatic.com/media/62f926_26b6714d0a0d4937b73e45668ce44bd9~mv2.webp",
   "https://static.wixstatic.com/media/62f926_8ddfdcc1378846e19308f5decd42954b~mv2.webp",
   "https://static.wixstatic.com/media/62f926_d5db0126f18a4cc0884f4308913f9362~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_a4cf7b87738c4ed89d251b691e9f8426~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_971fa237736944e984593279e2b0d70f~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_2859c9d4dc1b4dd8a20e29dce61ea6d3~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_2d4fd6e6357345238f12874fbb60275a~mv2.webp",
+  "https://static.wixstatic.com/media/62f926_e4c918f468b243d89371fa40f6424fce~mv2.webp",
 ];
 
 export default function Fleet() {
