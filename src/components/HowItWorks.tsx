@@ -80,7 +80,7 @@ const STEPS = [
   {
     num: "STEP 02",
     title: "We Deliver & Set Up",
-    desc: "Your RV arrives at your campground or RV park, ready to go. Westin personally walks you through everything before your first match.",
+    desc: "Your RV arrives at your campground or RV park, ready to go. Weston and his team personally walk you through everything before your first match.",
     Icon: TruckIcon,
   },
   {

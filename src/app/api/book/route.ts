@@ -76,13 +76,13 @@ function renderConfirmationHtml(name: string) {
       <div style="color:#D4A853;font-size:40px;line-height:1;margin-bottom:16px">✦</div>
       <div style="color:#D4A853;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;margin-bottom:12px">Triple W Rentals</div>
       <h1 style="font-family:'Playfair Display',Georgia,serif;color:#F5F0E8;font-size:28px;font-weight:600;margin:0 0 16px;line-height:1.2">We got your request, ${escapeHtml(first)}.</h1>
-      <p style="color:#A8A29E;font-size:15px;line-height:1.65;margin:0 0 20px">Thanks for reaching out about the 2026 FIFA World Cup in Dallas. Westin will personally review your details and get back to you within 24 hours to lock in your unit and dates.</p>
+      <p style="color:#A8A29E;font-size:15px;line-height:1.65;margin:0 0 20px">Thanks for reaching out about the 2026 FIFA World Cup in Dallas. Weston and his team will personally review your details and get back to you within 24 hours to lock in your unit and dates.</p>
     </td></tr>
     <tr><td style="padding:0 32px 24px">
       <div style="background:#0D0B09;border:1px solid #2a2420;border-radius:12px;padding:20px">
         <div style="color:#D4A853;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:10px">What's next</div>
         <ol style="color:#F5F0E8;font-size:14px;line-height:1.75;margin:0;padding-left:18px">
-          <li>Westin reviews your dates &amp; group size</li>
+          <li>Weston and his team review your dates &amp; group size</li>
           <li>You get a reply with unit options + a quote</li>
           <li>Confirm &amp; we deliver the RV to your door</li>
         </ol>

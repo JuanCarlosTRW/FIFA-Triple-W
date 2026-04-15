@@ -97,9 +97,6 @@ export default function Reviews() {
           <h2 className="font-display text-cream text-4xl md:text-5xl mt-5 leading-tight">
             Don&apos;t Take Our Word for It.
           </h2>
-          <p className="text-text-secondary text-base md:text-lg mt-5 leading-relaxed">
-            See what our renters say about the Triple W experience.
-          </p>
         </motion.div>
 
         <div className="flex justify-center gap-6 mt-14 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] md:max-h-[720px] overflow-hidden">

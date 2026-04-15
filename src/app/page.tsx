@@ -34,6 +34,11 @@ export default function Home() {
       <Reviews />
       <FAQ />
       <GoldDivider />
+      <section className="bg-charcoal w-full pt-2 pb-10">
+        <p className="text-center font-sans text-cream/75 text-[13px] md:text-sm tracking-wide px-6">
+          Led by Weston — outfitting premium RVs for events across Texas.
+        </p>
+      </section>
       <BookingForm />
       <Footer />
     </main>

@@ -89,9 +89,9 @@ export default function HotelMath() {
               The Smarter Play
             </p>
             <h2 className="font-display text-cream text-4xl md:text-5xl leading-tight mb-10">
-              A Better Way to Stay.
+              Sleep Better. Spend Smarter.
               <br />
-              A Fraction of the Price.
+              Stay on Your Terms.
             </h2>
             <ul className="flex flex-col gap-4 mb-10">
               {BENEFITS.map((b) => (
@@ -102,10 +102,10 @@ export default function HotelMath() {
               ))}
             </ul>
             <a
-              href="#fleet"
+              href="#booking"
               className="inline-flex items-center gap-2 border border-gold/60 text-gold hover:bg-gold hover:text-charcoal transition-all duration-300 px-6 py-3 rounded-md text-sm font-medium tracking-wide uppercase"
             >
-              See Available Units <span aria-hidden>→</span>
+              Reserve Your Dates <span aria-hidden>→</span>
             </a>
           </div>
         </BlurFade>

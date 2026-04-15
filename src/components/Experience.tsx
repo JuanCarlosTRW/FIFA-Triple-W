@@ -24,24 +24,23 @@ export default function Experience() {
           <div className="text-text-secondary text-[17px] md:text-[19px] leading-[1.7] max-w-2xl mx-auto space-y-5">
             <p>
               Wake up on match day in your own space. Make coffee. No lobby. No checkout.
+              No strangers.
             </p>
             <p>
-              Tailgate with your group before kickoff. Come back after the final whistle
-              to AC, a real kitchen, and actual beds — not a cramped hotel room split
-              four ways.
+              Tailgate with your crew before kickoff. Come back after the final whistle
+              to AC, a real kitchen, and actual beds.
             </p>
             <p className="text-cream/90 font-medium">
-              This is what the smart fans figure out: the RV isn&apos;t the backup plan.
-              It&apos;s the better plan.
+              The RV isn&apos;t the backup plan. It&apos;s the better plan.
             </p>
           </div>
         </BlurFade>
         <BlurFade delay={0.35}>
           <a
             href="#booking"
-            className="mt-12 inline-block text-gold text-base md:text-lg border-b border-gold/40 hover:border-gold pb-1 transition-all duration-300"
+            className="mt-12 inline-flex items-center justify-center bg-gold hover:bg-gold-light text-charcoal font-semibold text-base md:text-lg px-10 py-4 rounded-lg transition-all duration-300 shadow-[0_0_40px_rgba(212,168,83,0.25)] hover:shadow-[0_0_60px_rgba(212,168,83,0.4)]"
           >
-            Reserve your basecamp →
+            Reserve Your Dates <span aria-hidden className="ml-2">→</span>
           </a>
         </BlurFade>
       </div>

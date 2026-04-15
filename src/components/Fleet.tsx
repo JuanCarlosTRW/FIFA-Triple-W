@@ -38,8 +38,9 @@ export default function Fleet() {
         </BlurFade>
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
-            Every RV is hand-selected, deep-cleaned, and personally inspected by Westin
-            before it leaves our lot. No surprises. No gambles.
+            Every unit is hand-selected, deep-cleaned, and personally walked through by
+            Weston and his team before it leaves our lot. What you see here is exactly
+            what shows up at your door.
           </p>
         </BlurFade>
 

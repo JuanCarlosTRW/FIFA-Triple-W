@@ -59,14 +59,23 @@ export default function BookingForm() {
     <section id="booking" className="bg-charcoal-warm w-full py-20 md:py-32">
       <div className="max-w-3xl mx-auto px-6">
         <BlurFade>
+          <p className="flex items-center justify-center gap-2 text-gold/90 text-[13px] md:text-sm tracking-wide text-center mb-5">
+            <span
+              aria-hidden
+              className="inline-block h-1.5 w-1.5 rounded-full bg-gold animate-pulse"
+            />
+            Only 7 of 20 units still available
+          </p>
+        </BlurFade>
+        <BlurFade delay={0.1}>
           <h2 className="font-display text-cream text-4xl md:text-5xl text-center leading-tight mb-5">
-            20 RVs. 3.8 Million Visitors. You Do the Math.
+            20 Premium RVs. 9 Matches. One Window.
           </h2>
         </BlurFade>
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
-            Fill out the form below. Westin will personally reach out within 24 hours
-            to lock in your unit and dates.
+            Fill out the form below. Weston and his team will personally reach out
+            within 24 hours to lock in your unit and dates.
           </p>
         </BlurFade>
 
@@ -86,8 +95,8 @@ export default function BookingForm() {
                     We got your request.
                   </h3>
                   <p className="text-text-secondary text-base max-w-md mx-auto">
-                    Westin will be in touch within 24 hours to confirm your reservation
-                    and help you choose the right unit.
+                    Weston and his team will be in touch within 24 hours to confirm your
+                    reservation and help you choose the right unit.
                   </p>
                 </motion.div>
               ) : (
@@ -182,7 +191,7 @@ export default function BookingForm() {
 
         <BlurFade delay={0.35}>
           <p className="text-text-secondary text-center text-[13px] mt-6 leading-relaxed">
-            Westin from Triple W will personally confirm your reservation within 24 hours.
+            Weston and his team will personally confirm your reservation within 24 hours.
             <br className="hidden sm:inline" />
             No spam. No pressure. Just premium RVs.
           </p>

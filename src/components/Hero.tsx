@@ -28,7 +28,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-cream text-[44px] leading-[1.05] sm:text-6xl md:text-7xl max-w-4xl mb-8"
         >
-          Your World Cup Home Base.
+          Your World Cup Starts Here.
           <br />
           <span className="text-gradient-gold">Delivered.</span>
         </motion.h1>
@@ -37,10 +37,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-text-secondary text-base md:text-xl max-w-2xl mb-12 leading-relaxed"
+          className="text-text-secondary text-base md:text-xl max-w-2xl mb-6 leading-relaxed"
         >
-          Hotels near Dallas Stadium are $1,000+ a night — if you can even find one.
+          Hotels near AT&amp;T Stadium are $1,000+ a night — if you can even find one.
           We deliver a premium RV to your door, fully set up, before your first kickoff.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="font-sans text-gold/80 text-[13px] md:text-sm tracking-wide mb-10"
+        >
+          ★★★★★ Rated 5.0 across 40+ Google Reviews
         </motion.p>
 
         <motion.div
