@@ -24,11 +24,11 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
-        <a href="#top" className="h-12 md:h-14 flex items-center">
+        <a href="#top" className="flex items-center">
           <img
             src="/logo.png"
             alt="Triple W Rentals"
-            className="h-full w-auto"
+            className="h-8 md:h-10 w-auto"
           />
         </a>
         <div className="flex items-center gap-2 sm:gap-3">
