@@ -23,7 +23,7 @@ const formatUnit = (n: number) => String(n).padStart(2, "0");
 function Unit({ display, label, wide }: { display: string; label: string; wide?: boolean }) {
   return (
     <div
-      className={`flex flex-col items-center bg-charcoal-warm/60 border border-gold/20 backdrop-blur-sm rounded-lg px-3 py-4 md:py-5 ${
+      className={`flex flex-col items-center bg-white/60 border border-gold/40 backdrop-blur-sm rounded-lg px-3 py-4 md:py-5 shadow-[0_4px_20px_rgba(212,168,83,0.15)] ${
         wide ? "min-w-[84px] md:min-w-[110px] px-4 md:px-6" : "min-w-[70px] md:min-w-[90px] md:px-5"
       }`}
     >
@@ -35,13 +35,13 @@ function Unit({ display, label, wide }: { display: string; label: string; wide?:
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -24, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-gold text-4xl md:text-6xl font-semibold tabular-nums leading-none"
+            className="font-display text-gold-dark text-4xl md:text-6xl font-semibold tabular-nums leading-none"
           >
             {display}
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="mt-2 text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-text-secondary">
+      <span className="mt-2 text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-charcoal/60">
         {label}
       </span>
     </div>
@@ -72,11 +72,11 @@ export default function CountdownTimer() {
     <div className="flex flex-col items-center">
       <div className="flex items-center gap-2 md:gap-4">
         <Unit display={formatDays(parts.days)} label="Days" wide />
-        <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
+        <span className="font-display text-gold-dark/50 text-3xl md:text-5xl">:</span>
         <Unit display={formatUnit(parts.hours)} label="Hours" />
-        <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
+        <span className="font-display text-gold-dark/50 text-3xl md:text-5xl">:</span>
         <Unit display={formatUnit(parts.minutes)} label="Mins" />
-        <span className="font-display text-gold/40 text-3xl md:text-5xl">:</span>
+        <span className="font-display text-gold-dark/50 text-3xl md:text-5xl">:</span>
         <Unit display={formatUnit(parts.seconds)} label="Secs" />
       </div>
     </div>

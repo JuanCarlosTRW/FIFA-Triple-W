@@ -46,14 +46,14 @@ const FlagItem = ({
   isMobile,
 }: FlagItemProps) => {
   const desktopSizes: Record<number, { width: number; height: number; blur: number; opacity: number }> = {
-    0: { width: 80, height: 60, blur: 2, opacity: 0.35 },
-    1: { width: 100, height: 75, blur: 0, opacity: 0.5 },
-    2: { width: 120, height: 90, blur: 0, opacity: 0.7 },
+    0: { width: 90, height: 68, blur: 1, opacity: 0.55 },
+    1: { width: 110, height: 83, blur: 0, opacity: 0.75 },
+    2: { width: 130, height: 98, blur: 0, opacity: 0.95 },
   };
   const mobileSizes: Record<number, { width: number; height: number; blur: number; opacity: number }> = {
-    0: { width: 36, height: 27, blur: 2, opacity: 0.22 },
-    1: { width: 44, height: 33, blur: 0, opacity: 0.35 },
-    2: { width: 54, height: 40, blur: 0, opacity: 0.45 },
+    0: { width: 52, height: 39, blur: 1, opacity: 0.65 },
+    1: { width: 60, height: 45, blur: 0, opacity: 0.8 },
+    2: { width: 68, height: 51, blur: 0, opacity: 0.95 },
   };
 
   const { width, height, blur, opacity } = (isMobile ? mobileSizes : desktopSizes)[layer];
@@ -142,12 +142,12 @@ const desktopPositions = [
   { x: 85, y: 55 },
 ];
 
-// Mobile: 4 flags, one per corner — clear of eyebrow/headline/countdown/CTA/trust-line bands
+// Mobile: 4 flags, one per corner — clear of navbar/eyebrow/headline/countdown/CTA/trust-line bands
 const mobilePositions = [
-  { x: 2, y: 1 },
-  { x: 86, y: 1 },
-  { x: 2, y: 95 },
-  { x: 86, y: 95 },
+  { x: 1, y: 10 },
+  { x: 82, y: 10 },
+  { x: 1, y: 85 },
+  { x: 82, y: 85 },
 ];
 
 export function AnimatedFlagsBackground() {
@@ -203,18 +203,18 @@ export function AnimatedFlagsBackground() {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Base dark gradient matching site charcoal */}
+      {/* Base cream gradient */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, #0D0B09 0%, #1A1510 50%, #0D0B09 100%)",
+            "linear-gradient(135deg, #F5F0E8 0%, #F7F4F0 50%, #F4EDE3 100%)",
         }}
       />
 
       {/* Subtle grain */}
       <motion.div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.04]"
         animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
         transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
         style={{
@@ -240,28 +240,28 @@ export function AnimatedFlagsBackground() {
         ))}
       </motion.div>
 
-      {/* Readability overlay — darker in the center to keep hero text crisp */}
+      {/* Readability overlay — soft cream fade toward center keeps text crisp */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 50%, rgba(13,11,9,0.55) 0%, rgba(13,11,9,0.3) 60%, rgba(13,11,9,0.7) 100%)",
+            "radial-gradient(ellipse at 50% 50%, rgba(245,240,232,0.55) 0%, rgba(245,240,232,0.15) 60%, rgba(245,240,232,0) 100%)",
         }}
       />
 
       {/* Warm gold tint to echo brand */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-40"
+        className="absolute inset-0 pointer-events-none opacity-30"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 40%, rgba(212,168,83,0.08) 0%, transparent 65%)",
+            "radial-gradient(ellipse at 50% 40%, rgba(212,168,83,0.18) 0%, transparent 65%)",
         }}
       />
 
-      {/* Vignette */}
+      {/* Soft vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ boxShadow: "inset 0 0 220px rgba(0,0,0,0.7)" }}
+        style={{ boxShadow: "inset 0 0 220px rgba(180,160,120,0.15)" }}
       />
     </div>
   );
