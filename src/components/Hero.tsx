@@ -78,7 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-6 text-text-secondary text-xs md:text-sm tracking-wide"
         >
-          20 premium units · Delivered across the U.S. · Personally handled by Weston and his team
+          20 premium units · Delivered across the U.S. · Personally handled by Westin and his team
         </motion.p>
       </div>
     </section>

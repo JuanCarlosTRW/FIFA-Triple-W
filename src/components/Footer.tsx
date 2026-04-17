@@ -11,7 +11,7 @@ export default function Footer() {
           Tyler, Texas · Nationwide Delivery
         </p>
         <p className="text-text-secondary text-sm mb-3">
-          Led by Weston Walker — outfitting premium RVs for events across the country.
+          Led by Westin Walker — outfitting premium RVs for events across the country.
         </p>
         <p className="mb-6">
           <a

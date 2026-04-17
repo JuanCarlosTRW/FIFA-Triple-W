@@ -65,7 +65,7 @@ export default function BookingForm() {
               aria-hidden
               className="inline-block h-1.5 w-1.5 rounded-full bg-gold animate-pulse"
             />
-            Only 7 of 20 units still available
+            Only 20 units available
           </p>
         </BlurFade>
         <BlurFade delay={0.1}>
@@ -75,7 +75,7 @@ export default function BookingForm() {
         </BlurFade>
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
-            Fill out the form below and Weston will personally reach out within 24
+            Fill out the form below and Westin will personally reach out within 24
             hours to walk you through options, answer questions, and confirm your
             unit.
           </p>
@@ -97,7 +97,7 @@ export default function BookingForm() {
                     We got your request.
                   </h3>
                   <p className="text-text-secondary text-base max-w-md mx-auto">
-                    Weston and his team will be in touch within 24 hours to confirm your
+                    Westin and his team will be in touch within 24 hours to confirm your
                     reservation and help you choose the right unit.
                   </p>
                 </motion.div>
@@ -193,7 +193,7 @@ export default function BookingForm() {
 
         <BlurFade delay={0.35}>
           <p className="text-text-secondary text-center text-[13px] mt-6 leading-relaxed">
-            Weston and his team will personally confirm your reservation within 24 hours.
+            Westin and his team will personally confirm your reservation within 24 hours.
             <br className="hidden sm:inline" />
             No spam. No pressure. Just premium RVs.
           </p>

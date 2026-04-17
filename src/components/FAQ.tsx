@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: "How do I reserve?",
-    a: "Fill out the form below with your dates and group size. Weston and his team will personally confirm your reservation within 24 hours and help you choose the right unit.",
+    a: "Fill out the form below with your dates and group size. Westin and his team will personally confirm your reservation within 24 hours and help you choose the right unit.",
   },
 ];
 

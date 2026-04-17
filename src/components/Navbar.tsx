@@ -24,11 +24,12 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
-        <a
-          href="#top"
-          className="font-display text-gold text-base sm:text-lg md:text-xl tracking-[0.14em] sm:tracking-[0.18em] uppercase whitespace-nowrap"
-        >
-          Triple W Rentals
+        <a href="#top" className="h-12 md:h-14 flex items-center">
+          <img
+            src="/logo.png"
+            alt="Triple W Rentals"
+            className="h-full w-auto"
+          />
         </a>
         <div className="flex items-center gap-2 sm:gap-3">
           <a
