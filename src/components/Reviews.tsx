@@ -95,8 +95,12 @@ export default function Reviews() {
             </div>
           </div>
           <h2 className="font-display text-cream text-4xl md:text-5xl mt-5 leading-tight">
-            Don&apos;t Take Our Word for It.
+            What Our Guests Say.
           </h2>
+          <p className="text-text-secondary text-base md:text-lg mt-5 leading-relaxed max-w-xl">
+            Real reviews from real renters. Families, groups, and travelers who&apos;ve
+            trusted us with the moments that matter.
+          </p>
         </motion.div>
 
         <div className="flex justify-center gap-6 mt-14 [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] max-h-[640px] md:max-h-[720px] overflow-hidden">

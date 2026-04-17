@@ -28,9 +28,9 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-cream text-[44px] leading-[1.05] sm:text-6xl md:text-7xl max-w-4xl mb-8"
         >
-          Your World Cup Starts Here.
+          The World Cup Is Coming to Dallas.
           <br />
-          <span className="text-gradient-gold">Delivered.</span>
+          <span className="text-gradient-gold">We&apos;ll Make Sure You&apos;re Ready.</span>
         </motion.h1>
 
         <motion.p
@@ -39,8 +39,9 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-text-secondary text-base md:text-xl max-w-2xl mb-6 leading-relaxed"
         >
-          Hotels near AT&amp;T Stadium are $1,000+ a night — if you can even find one.
-          We deliver a premium RV to your door, fully set up, before your first kickoff.
+          Hotels near AT&amp;T Stadium are booked, overpriced, and miles from the action.
+          We bring a premium RV to wherever you&apos;re staying — fully set up, stocked,
+          and ready before your first match.
         </motion.p>
 
         <motion.p
@@ -77,7 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-6 text-text-secondary text-xs md:text-sm tracking-wide"
         >
-          20 Premium Units · Delivered Anywhere in the US · Book Before They&apos;re Gone
+          20 premium units · Delivered across the U.S. · Personally handled by Weston and his team
         </motion.p>
       </div>
     </section>

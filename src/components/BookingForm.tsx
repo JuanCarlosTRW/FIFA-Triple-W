@@ -70,13 +70,14 @@ export default function BookingForm() {
         </BlurFade>
         <BlurFade delay={0.1}>
           <h2 className="font-display text-cream text-4xl md:text-5xl text-center leading-tight mb-5">
-            20 Premium RVs. 9 Matches. One Window.
+            Let&apos;s Lock in Your Dates.
           </h2>
         </BlurFade>
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed">
-            Fill out the form below. Weston and his team will personally reach out
-            within 24 hours to lock in your unit and dates.
+            Fill out the form below and Weston will personally reach out within 24
+            hours to walk you through options, answer questions, and confirm your
+            unit.
           </p>
         </BlurFade>
 
@@ -182,7 +183,7 @@ export default function BookingForm() {
                     disabled={status === "submitting"}
                     className="w-full text-base md:text-lg py-4 mt-2"
                   >
-                    {status === "submitting" ? "Sending…" : "Reserve My World Cup RV"}
+                    {status === "submitting" ? "Sending…" : "Request My Reservation"}
                   </ShinyButton>
                 </motion.form>
               )}

@@ -18,7 +18,7 @@ const FAQS = [
     a: "We offer flexible rental windows. Whether you're coming for a single match or staying for the entire group stage, we'll build a rental period that fits your schedule. Just tell us your dates and we'll make it work.",
   },
   {
-    q: "Is there AC? It's Texas in June.",
+    q: "Will the RV stay cool in Texas heat?",
     a: "Every unit comes with full air conditioning. We know Texas summers. Our RVs are built to keep you cool and comfortable — you'll sleep better than you would in most hotels.",
   },
   {

@@ -36,16 +36,16 @@ export default function Fleet() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
         <BlurFade>
           <h2 className="font-display text-cream text-4xl md:text-5xl text-center leading-tight mb-6">
-            This Is What Shows Up at Your Door.
+            This Is the RV That Shows Up.
             <br className="hidden sm:block" />
-            <span className="text-gradient-gold"> Not a Stock Photo.</span>
+            <span className="text-gradient-gold"> Real Photos. Real Units.</span>
           </h2>
         </BlurFade>
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
-            Every unit is hand-selected, deep-cleaned, and personally walked through by
-            Weston and his team before it leaves our lot. What you see here is exactly
-            what shows up at your door.
+            Every unit in our fleet is hand-selected, deep-cleaned, and personally
+            walked through by Weston before it leaves our lot. What you see here is
+            exactly what arrives at your door — inside and out.
           </p>
         </BlurFade>
 

@@ -61,13 +61,14 @@ export default function MatchSchedule() {
       <div className="max-w-7xl mx-auto px-6">
         <BlurFade>
           <h2 className="font-display text-cream text-4xl md:text-5xl text-center mb-6 leading-tight">
-            9 Matches. 30 Days. One Stadium. Your Move.
+            Nine Matches. One Stadium. A Month You&apos;ll Remember.
           </h2>
         </BlurFade>
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-2xl mx-auto mb-16">
-            Argentina. England. Netherlands. The world&apos;s best are coming to Arlington.
-            Where you stay should match the occasion.
+            Argentina, England, the Netherlands — the best teams in the world are
+            coming to Arlington. Where you stay should feel like part of the
+            experience, not a compromise.
           </p>
         </BlurFade>
 

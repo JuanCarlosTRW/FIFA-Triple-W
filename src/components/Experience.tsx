@@ -15,17 +15,13 @@ export default function Experience() {
           </h2>
         </BlurFade>
         <BlurFade delay={0.2}>
-          <div className="text-text-secondary text-[17px] md:text-[19px] leading-[1.7] max-w-2xl mx-auto space-y-5">
+          <div className="text-text-secondary text-[17px] md:text-[19px] leading-[1.7] max-w-2xl mx-auto">
             <p>
-              Wake up on match day in your own space. Make coffee. No lobby. No checkout.
-              No strangers.
-            </p>
-            <p>
-              Tailgate with your crew before kickoff. Come back after the final whistle
-              to AC, a real kitchen, and actual beds.
-            </p>
-            <p className="text-cream/90 font-medium">
-              The RV isn&apos;t the backup plan. It&apos;s the better plan.
+              The World Cup only comes to your city once in a generation. The matches
+              are the memory you came for — but the quiet moments matter too. Morning
+              coffee before the crowds wake up. The walk back after a win. A real bed,
+              a real shower, a space that feels like yours for the week. That&apos;s
+              what we build every rental around.
             </p>
           </div>
         </BlurFade>

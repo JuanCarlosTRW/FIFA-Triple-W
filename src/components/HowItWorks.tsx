@@ -74,19 +74,19 @@ const STEPS = [
   {
     num: "STEP 01",
     title: "Choose Your Dates",
-    desc: "Tell us which matches you're attending. We'll recommend the right rental window to cover your full World Cup schedule.",
+    desc: "Tell us which matches you're attending and we'll recommend the right rental window for your full World Cup schedule.",
     Icon: CalendarIcon,
   },
   {
     num: "STEP 02",
     title: "We Deliver & Set Up",
-    desc: "Your RV arrives at your campground or RV park, ready to go. Weston and his team personally walk you through everything before your first match.",
+    desc: "Your RV arrives at your campground or chosen location, fully set up and ready. Weston and his team personally walk you through everything before your first match.",
     Icon: TruckIcon,
   },
   {
     num: "STEP 03",
-    title: "Enjoy the World Cup",
-    desc: "Come home to your own space after every match. Cook, relax, sleep comfortably. We pick up when you're done.",
+    title: "Enjoy the Tournament",
+    desc: "Come home to your own space after every match. Cook, relax, sleep well. When the tournament wraps, we pick up. That's it.",
     Icon: TrophyIcon,
   },
 ];
@@ -97,7 +97,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-6">
         <BlurFade>
           <h2 className="font-display text-cream text-4xl md:text-5xl text-center leading-tight mb-16 md:mb-20">
-            Three Steps. Zero Stress.
+            Simple From the First Call to the Last Match.
           </h2>
         </BlurFade>
 
