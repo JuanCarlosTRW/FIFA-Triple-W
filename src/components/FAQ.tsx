@@ -11,7 +11,7 @@ const FAQS = [
   },
   {
     q: "Do you deliver and set up the RV?",
-    a: "Yes. We deliver nationwide across the entire US. Your RV arrives at your campground or designated location fully prepped — leveled, connected, and ready for you. Weston and his team personally walk you through the unit so you're comfortable with everything before your first match.",
+    a: "Yes. We deliver nationwide across the entire US. Your RV arrives at your campground or designated location fully prepped — leveled, connected, and ready for you. Westin and his team personally walk you through the unit so you're comfortable with everything before your first match.",
   },
   {
     q: "What if I only need the RV for 3–4 days?",

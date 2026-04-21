@@ -44,7 +44,7 @@ export default function Fleet() {
         <BlurFade delay={0.15}>
           <p className="text-text-secondary text-center text-base md:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
             Every unit in our fleet is hand-selected, deep-cleaned, and personally
-            walked through by Weston before it leaves our lot. What you see here is
+            walked through by Westin before it leaves our lot. What you see here is
             exactly what arrives at your door — inside and out.
           </p>
         </BlurFade>
