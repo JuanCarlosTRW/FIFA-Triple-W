@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@fontsource/playfair-display/400.css";
 import "@fontsource/playfair-display/500.css";
 import "@fontsource/playfair-display/600.css";
@@ -32,6 +33,18 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="font-body bg-charcoal text-cream antialiased">
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10835426783"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-10835426783');
+          `}
+        </Script>
       </body>
     </html>
   );
